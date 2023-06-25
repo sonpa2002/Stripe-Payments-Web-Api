@@ -1,0 +1,74 @@
+2023-06-02T13:40:08.6525693+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-02T13:40:08.6576190+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-02T13:40:08.6711808+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-02T13:40:08.6725039+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-02T13:40:08.6735971+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-02T13:41:23.5362914+07:00 0HMR36GQMUH1R:00000001 [INF] Entity Framework Core "6.0.16" initialized '"ApiDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.16"' with options: "None" (d2805559)
+2023-06-02T13:41:25.5914807+07:00 0HMR36GQMUH1R:00000001 [INF] Executed DbCommand ("104"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2023-06-02T13:41:25.7833681+07:00 0HMR36GQMUH1R:00000001 [INF] Executed DbCommand ("28"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2023-06-02T13:41:26.0081676+07:00 0HMR36GQMUH1R:00000001 [INF] Executed DbCommand ("30"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0" (0723d8ff)
+2023-06-02T13:41:26.0368462+07:00 0HMR36GQMUH1R:00000001 [INF] User logged in. (fdce0db4)
+2023-06-02T13:45:35.1765149+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-02T13:45:35.1817162+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-02T13:45:35.1945197+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-02T13:45:35.1959079+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-02T13:45:35.1970619+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-02T13:46:30.1439463+07:00 0HMR36JS3B2LV:00000001 [INF] Entity Framework Core "6.0.16" initialized '"ApiDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.16"' with options: "None" (d2805559)
+2023-06-02T13:46:31.7809199+07:00 0HMR36JS3B2LV:00000001 [INF] Executed DbCommand ("56"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2023-06-02T13:46:31.9581627+07:00 0HMR36JS3B2LV:00000001 [INF] Executed DbCommand ("28"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2023-06-02T13:46:32.1488926+07:00 0HMR36JS3B2LV:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0" (0723d8ff)
+2023-06-02T13:46:32.1750265+07:00 0HMR36JS3B2LV:00000001 [INF] User logged in. (fdce0db4)
+2023-06-02T13:57:18.4122329+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-02T13:57:18.4417038+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-02T13:57:18.4532644+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-02T13:57:18.4545314+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-02T13:57:18.4556177+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-02T13:57:31.9870482+07:00 0HMR36QDJ0JI6:00000001 [INF] User logged out. (f9c27106)
+2023-06-02T13:57:56.5602272+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-02T13:57:56.5648134+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-02T13:57:56.5789469+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-02T13:57:56.5810473+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-02T13:57:56.5828207+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-02T13:58:38.8249575+07:00 0HMR36QOSUARU:00000001 [INF] Entity Framework Core "6.0.16" initialized '"ApiDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.16"' with options: "None" (d2805559)
+2023-06-02T13:58:41.0819599+07:00 0HMR36QOSUARU:00000001 [INF] Executed DbCommand ("113"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2023-06-02T13:58:41.2870867+07:00 0HMR36QOSUARU:00000001 [INF] Executed DbCommand ("27"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2023-06-02T13:58:41.3875104+07:00 0HMR36QOSUARU:00000001 [WRN] Invalid password for user. (6d284782)
+2023-06-02T13:58:41.3899498+07:00 0HMR36QOSUARU:00000001 [WRN] User failed to provide the correct password. (a25e98da)
+2023-06-02T13:59:02.8285284+07:00 0HMR36QOSUAS0:00000001 [INF] Entity Framework Core "6.0.16" initialized '"ApiDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.16"' with options: "None" (d2805559)
+2023-06-02T13:59:02.8349360+07:00 0HMR36QOSUAS0:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2023-06-02T13:59:02.8398815+07:00 0HMR36QOSUAS0:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2023-06-02T13:59:02.9481599+07:00 0HMR36QOSUAS0:00000001 [INF] Executed DbCommand ("18"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0" (0723d8ff)
+2023-06-02T13:59:02.9681852+07:00 0HMR36QOSUAS0:00000001 [INF] User logged in. (fdce0db4)

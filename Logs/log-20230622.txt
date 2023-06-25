@@ -1,0 +1,349 @@
+2023-06-22T19:45:03.4892758+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T19:45:03.5013081+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T19:45:03.5313145+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T19:45:03.5352500+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T19:45:03.5379921+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T20:01:21.8399599+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T20:01:21.8509824+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T20:01:21.9916736+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T20:01:21.9937768+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T20:01:21.9951416+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T20:02:01.3901095+07:00 0HMRJ433J86QU:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Stripe.SystemNetHttpClient.SendHttpRequest(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 237
+   at Stripe.SystemNetHttpClient.MakeRequestAsync(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 152
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 47
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T20:21:19.4663560+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T20:21:19.4759469+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T20:21:19.5010063+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T20:21:19.5116729+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T20:21:19.5140105+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T20:24:33.3044948+07:00 0HMRJ4E8EN0EK:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Stripe.StripeException: Your card number is incorrect.
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 153
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 47
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T20:30:19.3171914+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T20:30:19.3230858+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T20:30:19.3453489+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T20:30:19.3494262+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T20:30:19.3521988+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T20:40:41.0149153+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T20:40:41.0223279+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T20:40:41.0660515+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T20:40:41.0686405+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T20:40:41.0711645+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T20:44:00.2852042+07:00 0HMRJ4P2K6364:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Stripe.SystemNetHttpClient.SendHttpRequest(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 237
+   at Stripe.SystemNetHttpClient.MakeRequestAsync(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 152
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 47
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T20:50:16.9620271+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T20:50:16.9669657+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T20:50:16.9808471+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T20:50:16.9824588+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T20:50:16.9839006+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T20:50:58.3878923+07:00 0HMRJ4UE88RTQ:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Stripe.SystemNetHttpClient.SendHttpRequest(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 237
+   at Stripe.SystemNetHttpClient.MakeRequestAsync(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 152
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 47
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T20:50:59.1551656+07:00 0HMRJ4UE88RTR:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Stripe.SystemNetHttpClient.SendHttpRequest(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 237
+   at Stripe.SystemNetHttpClient.MakeRequestAsync(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 152
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 47
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T20:56:52.2349424+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T20:56:52.2399003+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T20:56:52.2507201+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T20:56:52.2522212+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T20:56:52.2534425+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T20:57:58.4053529+07:00 0HMRJ5242SU6E:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+ ---> System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at System.Net.Http.ConnectHelper.EstablishSslConnectionAsync(SslClientAuthenticationOptions sslOptions, HttpRequestMessage request, Boolean async, Stream stream, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Stripe.SystemNetHttpClient.SendHttpRequest(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 237
+   at Stripe.SystemNetHttpClient.MakeRequestAsync(StripeRequest request, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/SystemNetHttpClient.cs:line 152
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 47
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T21:32:49.7703403+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T21:32:49.7757081+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T21:32:49.7954859+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T21:32:49.7972413+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T21:32:49.7989116+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T21:34:11.5939630+07:00 0HMRJ5M71ULNQ:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Stripe.StripeException: Your card number is incorrect.
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 153
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 47
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T22:45:26.7210517+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T22:45:26.7278439+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T22:45:26.7430221+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T22:45:26.7448953+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T22:45:26.7462689+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T22:52:32.9698716+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T22:52:32.9748786+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T22:52:32.9866124+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T22:52:32.9877103+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T22:52:32.9888254+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T22:52:58.2562617+07:00 0HMRJ72OHMB0I:00000002 [INF] Entity Framework Core "6.0.16" initialized '"ApiDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.16"' with options: "None" (d2805559)
+2023-06-22T22:53:00.6969385+07:00 0HMRJ72OHMB0I:00000002 [INF] Executed DbCommand ("211"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2023-06-22T22:53:00.8818591+07:00 0HMRJ72OHMB0I:00000002 [INF] Executed DbCommand ("30"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2023-06-22T22:53:01.1035866+07:00 0HMRJ72OHMB0I:00000002 [INF] Executed DbCommand ("13"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0" (0723d8ff)
+2023-06-22T22:53:01.1232965+07:00 0HMRJ72OHMB0I:00000002 [INF] User logged in. (fdce0db4)
+2023-06-22T23:14:17.2313813+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T23:14:17.2372874+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T23:14:17.2499566+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T23:14:17.2514164+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T23:14:17.2528506+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T23:34:02.8004894+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T23:34:02.8071704+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T23:34:02.8253515+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T23:34:02.8275273+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T23:34:02.8304138+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T23:42:12.6862100+07:00 0HMRJ7PUJ1UHS:00000002 [INF] StripeCustomer { Name = Le linh son, Email = sonle@gmail.com, CustomerId = cus_O86nfeDnQYpuD5 } (5e9265f9)
+2023-06-22T23:47:49.9124914+07:00 0HMRJ7PUJ1UHT:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Stripe.StripeException: Your card number is incorrect.
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 153
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 50
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-22T23:55:41.7545437+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-22T23:55:41.7713967+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-22T23:55:41.8074512+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-22T23:55:41.8092740+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-22T23:55:41.8106440+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
+2023-06-22T23:58:00.7886886+07:00 0HMRJ861MB7F7:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Stripe.StripeException: Your card number is incorrect.
+   at Stripe.StripeClient.ProcessResponse[T](StripeResponse response) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 153
+   at Stripe.StripeClient.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken) in /_/src/Stripe.net/Infrastructure/Public/StripeClient.cs:line 115
+   at Stripe.Service`1.RequestAsync[T](HttpMethod method, String path, BaseOptions options, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at Stripe_Payments_Web_Api.Application.StripeAppService.AddStripeCustomerAsync(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Application\StripeAppService.cs:line 46
+   at Stripe_Payments_Web_Api.Controllers.StripeController.AddStripeCustomer(AddStripeCustomer customer, CancellationToken ct) in C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\Controllers\StripeController.cs:line 54
+   at lambda_method5(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)

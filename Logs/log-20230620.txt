@@ -1,0 +1,5 @@
+2023-06-20T21:43:12.9484064+07:00  [INF] Now listening on: "https://localhost:7051" (d826f4b8)
+2023-06-20T21:43:12.9886861+07:00  [INF] Now listening on: "http://localhost:5065" (d826f4b8)
+2023-06-20T21:43:13.0028967+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-06-20T21:43:13.0045510+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2023-06-20T21:43:13.0059308+07:00  [INF] Content root path: "C:\Users\lelso\source\repos\Stripe-Payments-Web-Api-Net6-main\Stripe-Payments-Web-Api-Net6-main\" (b5d60022)
